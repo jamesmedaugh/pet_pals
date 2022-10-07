@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 from flask_sqlalchemy import SQLAlchemy
 #os.environ.get('DATABASE_URL', '')
-app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL', '')
+app.config['SQLALCHEMY_DATABASE_URI'] =  os.environ.get('DATABASE_URL', '').replace('posgres://', 'postgresqlL//')
 
 # Remove tracking modifications
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
